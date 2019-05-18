@@ -119,8 +119,7 @@ function print(message){
     const outputDiv= document.getElementById("output")
     outputDiv.innerHTML = message
 }
-
- const quotea = () =>{
+() =>{
 		for(let i = 0; i < quotesource.length; i++){
 		authors = quotesource[randomNUmber].name.fontsize(3).sub();
 		quotes = quotesource[randomNUmber].quote;
@@ -129,8 +128,6 @@ function print(message){
 		print(mesage)
 
 }
-
-setTimeout(quotea, 3000)
 
 
 
