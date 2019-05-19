@@ -107,27 +107,55 @@ var quotesource = [
 
 ];
 
+ 	var colors = [
+			'#490A3D',
+			'#BD1550',
+			'#E97F02',
+			'#F8CA00',
+			'#8A9B0F',
+			'#69D2E7',
+			'#FA6900',
+			'#16a085',
+			'#27ae60',
+			'#2c3e50',
+			'#f39c12',
+			'#e74c3c',
+			'#9b59b6',
+			'#FB6964',
+			'#342224',
+			'#472E32',
+			'#77B1A9',
+			'#73A857'
+		];
+
 
 
 let authors;
 let quotes;
 var message;
-var randomNUmber = Math.floor(Math.random() * quotesource.length);
-const buttonEl = document.querySelector("button")
 
+
+var buttonEl = document.querySelector("button")
+var bodyEl = document.querySelector("body")
 function print(message){
-    const outputDiv= document.getElementById("output")
+    const outputDiv= document.querySelector(".output")
     outputDiv.innerHTML = message
 }
-() =>{
-		for(let i = 0; i < quotesource.length; i++){
-		authors = quotesource[randomNUmber].name.fontsize(3).sub();
+
+buttonEl.addEventListener("click", () =>{
+    var randomNUmber = Math.floor(Math.random() * quotesource.length);
+		authors = quotesource[randomNUmber].name.fontsize(3);
 		quotes = quotesource[randomNUmber].quote;
-		message = `"${quotes} written by ${authors}"`;
-	}
-		print(mesage)
+    for(let i = 0; i <colors.length; i++){
+      var randomColor = Math.floor(Math.random() * colors.length);
+        bodyEl.style.backgroundColor= colors[randomColor]
+    }
+	message = `${quotes} written by ${authors}`;
 
-}
+  print(message)
 
 
+
+
+})
 
